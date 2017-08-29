@@ -51,7 +51,7 @@ export default class HomeView extends Component {
         }).then(function (json) {
             let js = JSON.stringify(json, null, '   ');
             console.log(js);
-            alert(js)
+            alert(js.result)
             setTimeout(function () {
                 self.setState({data: [""], isSubmitting: false});
             }, 1000);
@@ -73,12 +73,15 @@ export default class HomeView extends Component {
         return <div>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                  Email:
-                  <input    type="text"
+                    Email Address:
+                    <br/>
+                    <input    type="text"
                             value={this.state.data[0]}
                             onChange={this.handleChange}
-                            />
-                </label>
+                    />
+                    </label>
+                    <br/>
+                    <br/>
                 <input type="submit" value="Subscribe / Unsubsribe" />
             </form>
             {this.state.isSubmitting ? <p>Submitting...</p> : ""}
