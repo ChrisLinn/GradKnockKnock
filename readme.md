@@ -3,7 +3,7 @@ Server for UniMelb Careers Online __IT-related Graduate Program__ notification e
 
 ## Usage
 ```
-npm run
+npm start
 ```
 
 ## Credits
