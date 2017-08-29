@@ -6,7 +6,7 @@ const port = config.server_port
 var ip = require("ip");
 var fs = require('fs');
 var date = new Date();
-const { execSync } = require('child_process');
+const { execSync,exec } = require('child_process');
 
 let md_file = "readme.md"
 
@@ -28,6 +28,14 @@ execSync('git add readme.md');
 execSync('git commit -m \"IP updated at ' + date + '\"');
 execSync('git push');
 
+exec('node server/worker.js', (err, stdout, stderr) => {
+  if (err) {
+    return;
+  }
+  // console.log(`${stdout}`);
+  // console.log(`stdout: ${stdout}`);
+  // console.log(`stderr: ${stderr}`);
+});
 
 server.listen(port)
 debug(`Server is now running at http://localhost:${port}.`)
