@@ -5,16 +5,13 @@ var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/test';
 
 
-
-
-
 router.post('/contact', function (req, res, next) {
     const {emailAddr} = req.body;
     res.set('Content-Type', 'application/json');
 
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);
-        console.log("Connected correctly to MongoDB");
+        console.log("\nConnected correctly to MongoDB.");
 
         findDocuments( 
                         res,
@@ -42,7 +39,6 @@ var findDocCb = function(res, db, collect, doc, docs) {
     else {
         insertDocuments(res, db, collect, doc);
     }
-    db.close();
 }
 
 var insertDocuments = function(res, db, collect, doc) {
@@ -55,6 +51,8 @@ var insertDocuments = function(res, db, collect, doc) {
     assert.equal(err, null);
     console.log("Added:", doc);
     res.send({"command": "subscribe", result: "订阅成功!"});
+    console.log("MongoDB Connection Closed.");
+    db.close();
   });
 }
 
@@ -66,6 +64,8 @@ var deleteDocument = function(res, db, collect, doc) {
     assert.equal(err, null);
     console.log("Removed:", doc);
     res.send({"command": "subscribe", result: "退订成功!"});
+    console.log("MongoDB Connection Closed.");
+    db.close();
   });
 }
 
