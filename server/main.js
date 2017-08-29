@@ -8,6 +8,11 @@ const config = require('../config')
 const app = express()
 const paths = config.utils_paths
 
+
+const router = require('../server/apis/publish');
+app.use('/api', router);
+
+
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------

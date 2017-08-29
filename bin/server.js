@@ -11,7 +11,7 @@ const { execSync,exec } = require('child_process');
 let md_file = "index.md"
 
 let content =   "# GradKnockKnock\n" +
-                "邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__\n\n" +
+                "邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__  资讯\n\n" +
                 "因为现在是挂在校园网内，请使用学校 VPN 访问\n\n" +
                 "如果还不能访问说明我没有开机...\n\n" +
                 "访问地址: [" + ip.address() + ":" 

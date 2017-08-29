@@ -1,0 +1,105 @@
+.message-box {
+  position: fixed;
+  left: 32.5vw;
+  top: 15vw;
+  width: 35vw;
+  height: 10vw;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  box-shadow: 0 0 5px silver;
+  border-radius: 15px;
+  z-index: 9999;
+  float: left;
+  opacity: 0;
+  font-family: "Open Sans";
+  font-size: 20px;
+  transform: scale(0, 0);
+  background-color: #ffffff;
+  box-shadow: 0 0 0px 1px rgba(#efefef, .45), 0 0 1px 2px rgba(#f3f3f3, .35), 0 0 2px 3px rgba(#fefefe, .25);
+
+  .msg-icon {
+    position: relative;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 50px;
+    }
+    margin: 0 10px;
+  }
+  .msg-content {
+    position: relative;
+    display: flex;
+    flex: 8;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+}
+
+.message-box.normal, .message-box.warn, .message-box.error, .message-box.success {
+  -webkit-animation: popIn 800ms 0s cubic-bezier(.03, .92, .29, .94);
+  -o-animation: popIn 800ms 0s cubic-bezier(.03, .92, .29, .94);
+  animation: popIn 800ms 0s cubic-bezier(.03, .92, .29, .94);
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+.message-box.success {
+  //background-color: #00a357;
+  color: #575757;
+  .msg-icon {
+    i {
+      color: #00a357;
+    }
+  }
+}
+
+.message-box.warn {
+  //background-color: #ffeb3b;
+  .msg-icon {
+    i {
+      color: #ffeb3b;
+    }
+  }
+}
+
+.message-box.error {
+  //background-color: #f44336;
+  color: #575757;
+  .msg-icon {
+    i {
+      color: #f44336;
+    }
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0.5;
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    border-top-color: #3C763D;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: #e6e6e6;
+  }
+}

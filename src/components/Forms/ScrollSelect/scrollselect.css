@@ -1,0 +1,63 @@
+.scroll-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row;
+  align-self: stretch;
+  flex: 1;
+  width: 100%;
+  font-size: 20px;
+  background: #f9f9f9; }
+  .scroll-select .left-scroll, .scroll-select .right-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #e6e6e6; }
+    .scroll-select .left-scroll i, .scroll-select .right-scroll i {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 30px;
+      pointer-events: none; }
+  .scroll-select .left-scroll {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; }
+  .scroll-select .right-scroll {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; }
+  .scroll-select .scroll-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    flex: 10; }
+    .scroll-select .scroll-options .scroll-option {
+      padding: 5px 15px;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-transition: all 0.6s;
+      -moz-transition: all 0.6s;
+      -ms-transition: all 0.6s;
+      -o-transition: all 0.6s;
+      transition: all 0.6s;
+      font-family: 'Raleway', sans-serif;
+      color: #5e5e5e;
+      text-shadow: 0 0 3px silver;
+      font-weight: 500; }
+    .scroll-select .scroll-options .scroll-option.hidden {
+      padding: 0px 0px;
+      opacity: 0.5;
+      text-shadow: none;
+      -webkit-transition: all 0.6s;
+      -moz-transition: all 0.6s;
+      -ms-transition: all 0.6s;
+      -o-transition: all 0.6s;
+      transition: all 0.6s; }
+
+.scroll-select.fixed, .width-1 {
+  width: 40vw; }
+
+/*# sourceMappingURL=scrollselect.css.map */
