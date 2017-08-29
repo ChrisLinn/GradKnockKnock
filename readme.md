@@ -1,2 +1,14 @@
 # GradKnockKnock
-邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__
+
+Server for UniMelb Careers Online __IT-related Graduate Program__ Notification email subscription
+
+## Usage
+```
+npm run
+```
+
+## Credits
+[bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
+
+## License
+MIT
