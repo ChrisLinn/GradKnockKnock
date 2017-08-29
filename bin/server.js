@@ -12,6 +12,8 @@ let md_file = "readme.md"
 
 let content =   "# GradKnockKnock\n" +
                 "邮件订阅 UoM Careers Online IT 相关 Graduate Program, \n" +
+                "因为现在是挂在校园网内，请使用学校 VPN 访问,\n\n" +
+                "如果还不能访问说明我没有开机...\n\n" +
                 "访问地址: [" + ip.address() + ":" 
                 + port + "](http:\/\/" + ip.address() + ":" 
                 + port+")\n\n" + 
