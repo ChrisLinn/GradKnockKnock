@@ -1,6 +1,5 @@
 # GradKnockKnock
-
-Server for UniMelb Careers Online __IT-related Graduate Program__ Notification email subscription
+Server for UniMelb Careers Online __IT-related Graduate Program__ notification email subscription.
 
 ## Usage
 ```
