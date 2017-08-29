@@ -10,13 +10,14 @@ var url = 'mongodb://localhost:27017/test';
 
 router.post('/contact', function (req, res, next) {
     const {emailAddr} = req.body;
+    res.set('Content-Type', 'application/json');
 
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);
         console.log("Connected correctly to MongoDB");
 
         findDocuments( 
-                        // res,
+                        res,
                         db,
                         "gradkkemail",
                         {email: emailAddr},
@@ -24,13 +25,12 @@ router.post('/contact', function (req, res, next) {
                     );
     });
 
-    res.set('Content-Type', 'application/json');
-    res.send({"command": "subscribe", result: "订阅成功!"});
+    // res.send({"command": "subscribe", result: "订阅成功!"});
 });
 
 
 
-var findDocuments = function(db, collect, doc, cb) {
+var findDocuments = function(res, db, collect, doc, cb) {
     var collection = db.collection(collect);
     collection.find(doc).toArray(function(err, docs) {
         assert.equal(err, null);
@@ -38,9 +38,10 @@ var findDocuments = function(db, collect, doc, cb) {
     });
 }
 
-var findDocCb = function(db, docs) {
+var findDocCb = function(res, db, docs) {
     if (docs.length > 0) {
-        console.dir(docs);
+        // console.dir(docs);
+        res.send({"command": "subscribe", result: "订阅成功!"});
     }
     db.close();
 }
