@@ -6,6 +6,12 @@ Server for UniMelb Careers Online __IT-related Graduate Program__ notification e
 npm start
 ```
 
+## TODOS
++ modularize mongo
++ grad-program fetcher
++ mail delivering
++ credential/config support
+
 ## Credits
 [bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
 
