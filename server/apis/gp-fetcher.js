@@ -3,7 +3,7 @@ var MongoClient = require('mongodb').MongoClient
 var db_url = 'mongodb://localhost:27017/test';
 
 let auth = '.CHAUTH=16CFE7B27C0CE901467B77EEA566142E4E72122A8813EB56D78B353C8340C9F483B0CDF89DB490A15DB57CE095B90EE9061CEF15C531F5C7F82F9BE5160EAC60711FE58364D6C42E5C5CB6259ED245BA67808B6B8A62DD55DF2927F4C6A39D37005125D01D105C3A0123A26081BF104184B7901FD14EF039AFABC60AEEBB67583E4961F2809F595992A1E70FE81C54C6AE2E6E1D55CEBB9AFC30415F9A53C3E944E508CFBDC2A9944628D7BB773F09E6'
-let career_url = 'https://careersonline.unimelb.edu.au/students/jobs/search?text=&typeofwork=2450&location=&country=Any&contractHours=FullTime&occupation=2461&residency=All+candidates+considered+including+international+students'
+let career_url = 'https://careersonline.unimelb.edu.au/students/jobs/search?text=&typeofwork=2450&location=&country=Any&contractHours=FullTime&occupation=2461&residency=All+candidates+considered+including+international+students&page=1&take=999'
 
 var superagent= require("superagent");
 
