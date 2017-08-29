@@ -8,7 +8,7 @@ var fs = require('fs');
 var date = new Date();
 const { execSync,exec } = require('child_process');
 
-let md_file = "readme.md"
+let md_file = "index.md"
 
 let content =   "# GradKnockKnock\n" +
                 "邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__, \n\n" +
@@ -24,7 +24,7 @@ let content =   "# GradKnockKnock\n" +
 
 fs.writeFileSync(md_file, content)
 
-execSync('git add readme.md');
+execSync('git add index.md');
 execSync('git commit -m \"IP updated at ' + date + '\"');
 execSync('git push');
 
