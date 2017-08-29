@@ -6,26 +6,31 @@ let auth = '.CHAUTH=16CFE7B27C0CE901467B77EEA566142E4E72122A8813EB56D78B353C8340
 let career_url = 'https://careersonline.unimelb.edu.au/students/jobs/search?text=&typeofwork=2450&location=&country=Any&contractHours=FullTime&occupation=2461&residency=All+candidates+considered+including+international+students&page=1&take=999'
 
 var superagent= require("superagent");
+var cheerio=require("cheerio");
 
 superagent.get(career_url).set("Cookie",auth).end(function(err,response){
     if (err) {
         console.log(err);
     } else {
 
-    console.log(response.text);
-    // var $ = cheerio.load(response.text);
+    // console.log(response.text);
+    var $ = cheerio.load(response.text);
 
     // // 此处，同样利用 F12 开发者工具，分析页面 Dom 结构，利用 cheerio 模块匹配元素
-    // var array = $('#zh-favlist-following-wrap .zm-item');
+    var array = $('.list-group-item');
     // console.log(" 收藏夹标题 " + " " + " 收藏人数");
-    // if (array && array.length > 0) {
-    //     array.each(function () {
-    //         console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
-    //         //$(this).find('.zm-item-title>a').text();
-    //         //$(this).find('.zg-num').text();
+    if (array && array.length > 0) {
+        array.each(function () {
+            // console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
+            console.log("Position:", $(this).find('.list-group-item-heading h4').text().replace(/\s+/g,' '));
+            console.log("Company:", $(this).find('.list-group-item-heading h5').text().replace(/\s+/g,' '));
+            console.log("URL:", "https:\/\/careersonline.unimelb.edu.au"+ $(this).find('.list-group-item-heading a').attr('href'));
+            console.log();
+            //$(this).find('.zm-item-title>a').text();
+            //$(this).find('.zg-num').text();
 
-    //     });
-    // }
+        });
+    }
 
 }
 });
