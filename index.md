@@ -1,5 +1,5 @@
 # GradKnockKnock
-邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__
+邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__ 资讯
 
 因为现在是挂在校园网内，请使用学校 VPN 访问
 
@@ -7,7 +7,7 @@
 
 访问地址: [10.13.74.155:3000](http://10.13.74.155:3000)
 
-Updated at: Tue Aug 29 2017 17:31:22 GMT+1000 (AEST)
+Updated at: Tue Aug 29 2017 17:37:29 GMT+1000 (AEST)
 
 您的打赏是我长胖的动力
 
