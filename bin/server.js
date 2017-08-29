@@ -11,10 +11,13 @@ const { execSync } = require('child_process');
 let md_file = "readme.md"
 
 let content =   "# GradKnockKnock\n" +
-                "__IP__: [" + ip.address() + ":" 
+                "邮件订阅 UoM Careers Online IT 相关 Graduate Program, \n" +
+                "访问地址: [" + ip.address() + ":" 
                 + port + "](http:\/\/" + ip.address() + ":" 
                 + port+")\n\n" + 
-                "__Updated at__: " + date + '\n' +
+                "Updated at: " + date + '\n' +
+                "您的打赏是我长胖的动力\n" +
+                "打赏二维码" +
                 "![QR](public\/QR.png)"
 
 fs.writeFileSync(md_file, content)
