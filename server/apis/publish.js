@@ -25,7 +25,7 @@ router.post('/contact', function (req, res, next) {
     });
 
     res.set('Content-Type', 'application/json');
-    res.send({"command": "subscribe", result: "ding yue cheng gong!"});
+    res.send({"command": "subscribe", result: "订阅成功!"});
 });
 
 
