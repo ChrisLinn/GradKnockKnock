@@ -82,7 +82,7 @@ export default class HomeView extends Component {
                     </label>
                     <br/>
                     <br/>
-                <input type="submit" value="Subscribe / Unsubsribe" />
+                <input type="submit" value="订阅 / 退订" />
             </form>
             {this.state.isSubmitting ? <p>Submitting...</p> : ""}
         </div>;

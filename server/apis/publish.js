@@ -41,7 +41,7 @@ var findDocuments = function(res, db, collect, doc, cb) {
 var findDocCb = function(res, db, docs) {
     if (docs.length > 0) {
         // console.dir(docs);
-        res.send({"command": "subscribe", result: "订阅成功!"});
+        res.send({"command": "subscribe", result: "退订成功!"});
     }
     db.close();
 }
