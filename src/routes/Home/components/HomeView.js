@@ -77,9 +77,9 @@ export default class HomeView extends Component {
                   <input    type="text"
                             value={this.state.data[0]}
                             onChange={this.handleChange}
-                            identity={0}  />
+                            />
                 </label>
-                <input type="submit" value="Subscribe!" />
+                <input type="submit" value="Subscribe / Unsubsribe" />
             </form>
             {this.state.isSubmitting ? <p>Submitting...</p> : ""}
         </div>;
