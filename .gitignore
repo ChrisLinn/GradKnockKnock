@@ -11,3 +11,5 @@ coverage
 *sublime*
 
 .directory
+
+private/

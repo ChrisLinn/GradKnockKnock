@@ -11,7 +11,7 @@ export const Header = () => (
         IT 相关 Graduate Program 资讯
         <br/>
         <br/>
-        虽然做的简陋但也是用了 React 了的好吗
+        (虽然做的简陋但也是用了 React 了的好吗)
     </div>
   </div>
 )

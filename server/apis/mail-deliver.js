@@ -1,3 +1,1 @@
-// while (1) {
-    console.log("x")
-// }
+var SES = require('../../../private/aws');
