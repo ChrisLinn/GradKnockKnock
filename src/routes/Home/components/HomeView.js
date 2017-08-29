@@ -84,7 +84,7 @@ export default class HomeView extends Component {
                     <br/>
                 <input type="submit" value="订阅 / 退订" />
             </form>
-            {this.state.isSubmitting ? <p>Submitting...</p> : ""}
+            {this.state.isSubmitting ? <p>Submitting...<br/>已订阅的会退订，退订了可再新订阅</p> : ""}
         </div>;
     }
 
