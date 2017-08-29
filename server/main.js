@@ -4,12 +4,16 @@ const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../build/webpack.config')
 const config = require('../config')
+const bodyParser = require('body-parser');
 
 const app = express()
 const paths = config.utils_paths
 
-
 const router = require('../server/apis/publish');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 app.use('/api', router);
 
 

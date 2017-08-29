@@ -9,22 +9,22 @@ var url = 'mongodb://localhost:27017/test';
 
 
 router.post('/contact', function (req, res, next) {
+    const {emailAddr} = req.body;
 
-    
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);
         console.log("Connected correctly to server");
 
         findDocuments( 
+                        // res,
                         db,
                         "gradkkemail",
-                        {email: "1@1.com"},
+                        {email: emailAddr},
                         findDocCb
                     );
     });
 
     res.set('Content-Type', 'application/json');
-
     res.send({"command": "subscribe", result: "ding yue cheng gong!"});
 });
 
@@ -40,12 +40,10 @@ var findDocuments = function(db, collect, doc, cb) {
 
 var findDocCb = function(db, docs) {
     if (docs.length > 0) {
-        // console.dir(docs);
+        console.dir(docs);
     }
     db.close();
 }
-
-
 
 
 module.exports = router;

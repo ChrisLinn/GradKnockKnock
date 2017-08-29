@@ -5,7 +5,7 @@ import EasySchema from "../../../utils/EasySchema.js";
 import './HomeView.scss'
 
 const Schema = new EasySchema({
-    email: {
+    emailAddr: {
         type: "String",
         regex: EasySchema.regex().email
     }
@@ -32,7 +32,7 @@ export default class HomeView extends Component {
     handleSubmit(event) {
         let email = this.state.data[0];
         let data = {
-            "email": email
+            "emailAddr": email
         };
         if (!Schema.validate(data)){
             alert("Email Address Is Not In Correct Format!")
@@ -51,10 +51,11 @@ export default class HomeView extends Component {
         }).then(function (json) {
             let js = JSON.stringify(json, null, '   ');
             console.log(js);
+            self.setState({data: [""], isSubmitting: false});
             alert(json.result);
-            setTimeout(function () {
-                self.setState({data: [""], isSubmitting: false});
-            }, 1000);
+            // setTimeout(function () {
+            //     self.setState({data: [""], isSubmitting: false});
+            // }, 300);
         }).catch(function (error) {
             console.log('There has been a problem with your fetch operation: ' +
                             error.message);
