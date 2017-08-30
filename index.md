@@ -7,8 +7,10 @@
 
 访问地址: [10.9.128.88:3000](http://10.9.128.88:3000)
 
-IP updated at: Wed Aug 30 2017 14:02:45 GMT+1000 (AEST)
+IP updated at: Wed Aug 30 2017 16:43:22 GMT+1000 (AEST)
 
+
+源码地址: [https://github.com/ChrisLinn/GradKnockKnock](https://github.com/ChrisLinn/GradKnockKnock)
 
 兄弟项目地址: [py-UnimelbCareerAutoBookin](https://github.com/ChrisLinn/py-UnimelbCareerAutoBookin), Careers Online 抢位软件
 
