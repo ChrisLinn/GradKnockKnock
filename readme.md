@@ -13,7 +13,7 @@ npm start
 + credential/config support
 
 ## Acknowlegdements
-+ a[bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
++ [bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
 
 ## License
 MIT
