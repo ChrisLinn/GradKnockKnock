@@ -3,10 +3,26 @@ const server = require('../server/main')
 const debug = require('debug')('app:bin:server')
 const port = config.server_port
 
-var ip = require("ip");
 var fs = require('fs');
+var os = require('os');
 var date = new Date();
 const { execSync,exec } = require('child_process');
+var ifaces = os.networkInterfaces();
+
+var ip = "0.0.0.0"
+Object.keys(ifaces).forEach(function (ifname) {
+    ifaces[ifname].forEach(function (iface) {
+        if ('IPv4' !== iface.family || iface.internal !== false) {
+            // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+            return;
+        }
+
+        if (iface.address.substr(0,3) == "10.") {
+            ip = iface.address
+        }
+    });
+});
+
 
 let md_file = "index.md"
 
@@ -14,8 +30,8 @@ let content =   "# GradKnockKnock\n" +
                 "邮件订阅 UniMelb Careers Online __IT__ 相关 __Graduate Program__  资讯\n\n" +
                 "因为现在是挂在校园网内，请使用学校 VPN 访问\n\n" +
                 "如果还不能访问说明我没有开机...\n\n" +
-                "访问地址: [" + ip.address() + ":" 
-                + port + "](http:\/\/" + ip.address() + ":" 
+                "访问地址: [" + ip + ":" 
+                + port + "](http:\/\/" + ip + ":" 
                 + port+")\n\n" + 
                 "IP updated at: " + date + "\n\n\n" +
                 "兄弟项目地址: [py-UnimelbCareerAutoBookin](https://github.com/ChrisLinn/py-UnimelbCareerAutoBookin), " +
