@@ -5,9 +5,9 @@
 
 如果还不能访问说明我没有开机...
 
-访问地址: [192.168.1.12:3000](http://192.168.1.12:3000)
+访问地址: [10.9.128.88:3000](http://10.9.128.88:3000)
 
-IP updated at: Wed Aug 30 2017 13:29:52 GMT+1000 (AEST)
+IP updated at: Wed Aug 30 2017 13:44:49 GMT+1000 (AEST)
 
 
 兄弟项目地址: [py-UnimelbCareerAutoBookin](https://github.com/ChrisLinn/py-UnimelbCareerAutoBookin), Careers Online 抢位软件
