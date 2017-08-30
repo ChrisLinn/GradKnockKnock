@@ -12,27 +12,19 @@ superagent.get(career_url).set("Cookie",auth).end(function(err,response){
     if (err) {
         console.log(err);
     } else {
-
-    // console.log(response.text);
-    var $ = cheerio.load(response.text);
-
-    // // 此处，同样利用 F12 开发者工具，分析页面 Dom 结构，利用 cheerio 模块匹配元素
-    var array = $('.list-group-item');
-    // console.log(" 收藏夹标题 " + " " + " 收藏人数");
-    if (array && array.length > 0) {
-        array.each(function () {
-            // console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
-            console.log("Position:", $(this).find('.list-group-item-heading h4').text().replace(/\s+/g,' '));
-            console.log("Company:", $(this).find('.list-group-item-heading h5').text().replace(/\s+/g,' '));
-            console.log("URL:", "https:\/\/careersonline.unimelb.edu.au"+ $(this).find('.list-group-item-heading a').attr('href'));
-            console.log();
-            //$(this).find('.zm-item-title>a').text();
-            //$(this).find('.zg-num').text();
-
-        });
+        console.log(response.text);
+        var $ = cheerio.load(response.text);
+        var array = $('.list-group-item');
+        if (array && array.length > 0) {
+            array.each(function () {
+                // console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
+                console.log("Position:", $(this).find('.list-group-item-heading h4').text().replace(/\s+/g,' '));
+                console.log("Company:", $(this).find('.list-group-item-heading h5').text().replace(/\s+/g,' '));
+                console.log("URL:", "https:\/\/careersonline.unimelb.edu.au"+ $(this).find('.list-group-item-heading a').attr('href'));
+                console.log();
+            });
+        }
     }
-
-}
 });
 
 

@@ -12,8 +12,8 @@ npm start
 + mail delivering
 + credential/config support
 
-## Credits
-[bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
+## Acknowlegdements
++ a[bodyno/react-starter-kit](https://github.com/bodyno/react-starter-kit)
 
 ## License
 MIT

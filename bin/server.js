@@ -17,8 +17,8 @@ let content =   "# GradKnockKnock\n" +
                 "访问地址: [" + ip.address() + ":" 
                 + port + "](http:\/\/" + ip.address() + ":" 
                 + port+")\n\n" + 
-                "Updated at: " + date + "\n\n\n" +
-                "兄弟项目地址: [py-UnimelbCareerAutoBookin](https://github.com/ChrisLinn/py-UnimelbCareerAutoBookin)\n\n" +
+                "IP updated at: " + date + "\n\n\n" +
+                "兄弟项目地址: [py-UnimelbCareerAutoBookin](https://github.com/ChrisLinn/py-UnimelbCareerAutoBookin), " +
                 "Careers Online 抢位软件\n\n\n" +
                 "您的打赏是我长胖的动力\n\n" +
                 "打赏二维码\n\n" +
