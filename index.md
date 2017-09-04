@@ -5,9 +5,9 @@
 
 如果还不能访问说明我没有开机...
 
-访问地址: [10.13.74.155:3000](http://10.13.74.155:3000)
+访问地址: [10.13.74.80:3000](http://10.13.74.80:3000)
 
-IP updated at: Mon Sep 04 2017 14:36:06 GMT+1000 (AEST)
+IP updated at: Mon Sep 04 2017 17:18:59 GMT+1000 (AEST)
 
 
 源码地址: [https://github.com/ChrisLinn/GradKnockKnock](https://github.com/ChrisLinn/GradKnockKnock)
