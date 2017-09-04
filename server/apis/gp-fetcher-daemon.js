@@ -10,21 +10,23 @@ superagent.agent()
     if (err) {
         console.log(err);
     } else {
-        console.log("Get------------->");
+        console.log("Get");
         cookie = response.headers['set-cookie'];
-        console.log("cookie->", cookie);
+        console.log("cookie:\n" + cookie);
         let cSID = cookie[0].split(";")[0];
         let cVTK = cookie[1].split(";")[0];
-        console.log("cSID->", cSID);        
-        console.log("cVTK->", cVTK);
+        console.log("cSID:\n", cSID);        
+        console.log("cVTK:\n", cVTK);
         var $ = cheerio.load(response.text);
-        let VTK = $('#LDAP-1 form input').attr('value')
-        console.log("VTK->", VTK);
+        let VTK = $('input')[0]["attribs"]['value']
+        console.log("\nUsing\nCookie:\n" + cSID+"; "+cVTK);
+        console.log("VTK:\n" + VTK + "\n\n\n");
 
 
         superagent
         .post(career_login)
-        .set('Cookie', cSID+";"+"cVTK")
+        .set('Cookie', cSID+"; "+cVTK)
+        .set('Content-Type', "application/x-www-form-urlencoded")
         .query({__RequestVerificationToken: VTK})
         .query({LDAPUsername: ""})
         .query({LDAPPassword: ""})
@@ -32,7 +34,8 @@ superagent.agent()
             if (err) {
                 // console.log(err);
             } else {
-                console.log(response.headers['set-cookie']);
+                // console.log(response.headers['set-cookie']);
+                // console.log(response.text);
             }
         });
     }
@@ -44,30 +47,28 @@ superagent.agent()
 //   , assert = require('assert');
 // var db_url = 'mongodb://localhost:27017/test';
 
-// let auth = '.CHAUTH=16CFE7B27C0CE901467B77EEA566142E4E72122A8813EB56D78B353C8340C9F483B0CDF89DB490A15DB57CE095B90EE9061CEF15C531F5C7F82F9BE5160EAC60711FE58364D6C42E5C5CB6259ED245BA67808B6B8A62DD55DF2927F4C6A39D37005125D01D105C3A0123A26081BF104184B7901FD14EF039AFABC60AEEBB67583E4961F2809F595992A1E70FE81C54C6AE2E6E1D55CEBB9AFC30415F9A53C3E944E508CFBDC2A9944628D7BB773F09E6'
-// let career_url = 'https://careersonline.unimelb.edu.au/students/jobs/search?text=&typeofwork=2450&location=&country=Any&contractHours=FullTime&occupation=2461&residency=All+candidates+considered+including+international+students&page=1&take=999'
+let auth = '.CHAUTH=04404D2B914FE7473A21B65A11945E8FCAB3D61DB6926CF1D5EECE3405FC3B7FB43DB6DE8C93631495300CCE3531291BB71660B1114D65CF965C929AE46440E80F34C700783EE95E94AF5BF4DE44FEB3A4A35E8656890A4512649CA2FE9CBC07626EB7B9D4FFDF31346A69677D03AA03CE49267159F2B98054975D640977AF8405C04E49B57BB59D904088401765DB6EABCE99273D618E90712841EFC5108354BE098CF3F03E43F396A94D1A09BF27B8'
+let career_url = 'https://careersonline.unimelb.edu.au/students/jobs/search?text=&typeofwork=2450&location=&country=Any&contractHours=FullTime&occupation=2461&residency=All+candidates+considered+including+international+students&page=1&take=999'
 
-// var superagent= require("superagent");
-// var cheerio=require("cheerio");
 
-// superagent.get(career_url).set("Cookie",auth).end(function(err,response){
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log(response.text);
-//         var $ = cheerio.load(response.text);
-//         var array = $('.list-group-item');
-//         if (array && array.length > 0) {
-//             array.each(function () {
-//                 // console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
-//                 console.log("Position:", $(this).find('.list-group-item-heading h4').text().replace(/\s+/g,' '));
-//                 console.log("Company:", $(this).find('.list-group-item-heading h5').text().replace(/\s+/g,' '));
-//                 console.log("URL:", "https:\/\/careersonline.unimelb.edu.au"+ $(this).find('.list-group-item-heading a').attr('href'));
-//                 console.log();
-//             });
-//         }
-//     }
-// });
+superagent.get(career_url).set("Cookie",auth).end(function(err,response){
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(response.text);
+        var $ = cheerio.load(response.text);
+        var array = $('.list-group-item');
+        if (array && array.length > 0) {
+            array.each(function () {
+                // console.log($(this).find('.zm-item-title>a').text() + " " + ($(this).find('.zg-num').text() ? $(this).find('.zg-num').text() : "0"));
+                console.log("Position:", $(this).find('.list-group-item-heading h4').text().replace(/\s+/g,' '));
+                console.log("Company:", $(this).find('.list-group-item-heading h5').text().replace(/\s+/g,' '));
+                console.log("URL:", "https:\/\/careersonline.unimelb.edu.au"+ $(this).find('.list-group-item-heading a').attr('href'));
+                console.log();
+            });
+        }
+    }
+});
 
 
 
