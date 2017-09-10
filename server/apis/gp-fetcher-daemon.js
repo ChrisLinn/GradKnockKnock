@@ -1,5 +1,6 @@
 var superagent= require("superagent");
 var cheerio=require("cheerio");
+var fs = require('fs');
 
 let career_ol = 'https://careersonline.unimelb.edu.au/'
 let career_login = 'https://careersonline.unimelb.edu.au/providers/ldap/login/1'
@@ -10,6 +11,7 @@ superagent.agent()
     if (err) {
         console.log(err);
     } else {
+        fs.writeFileSync("./response.txt", response)
         console.log("Get------------->");
         cookie = response.headers['set-cookie'];
         console.log("cookie->", cookie);
